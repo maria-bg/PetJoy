@@ -51,6 +51,7 @@ def menu(channel):
         return menu(channel)
 
     queue = channel.queue_declare('', exclusive=True).method.queue
+
     channel.queue_bind(exchange=exchange_name, queue=queue,
                        routing_key=routing_key)
     print("\nAguardando mensagens do PetJoy Hotel...")
