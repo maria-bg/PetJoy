@@ -49,7 +49,6 @@ public class Produtor {
     public static void main(String[] argv) throws Exception {
         Scanner scanner = new Scanner(System.in);
         String tipo;
-        String cachorro;
 
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("jackal-01.rmq.cloudamqp.com");
@@ -69,40 +68,15 @@ public class Produtor {
             String cuidador = scanner.nextLine();
 
             while (true) {
-                System.out.println("\nMenu do(a) " + cuidador + ":");
-                System.out.println("1) Enviar Atualização Geral");
-                System.out.println("2) Enviar Atualização de Um Pet");
-                System.out.println("0) Voltar para o Menu");
-                System.out.print("Digite o número correspondente à sua opção: ");
-
-                int opcao = scanner.nextInt();
-                scanner.nextLine();
-
-                if (opcao == 0) {
-                    System.out.println("Até logo!");
-                    break;
-                }
-
-                cachorro = "*";
-                if (opcao == 1) {
-                    tipo = menuCategoria(scanner);
-                } else if (opcao == 2) {
-                    System.out.print("Digite o nome do cachorro: ");
-                    cachorro = scanner.nextLine().toLowerCase();
-                    tipo = menuCategoria(scanner);
-                } else {
-                    System.out.println("Opção inválida. Tente novamente.");
-                    continue;
-                }
-
+                tipo = menuCategoria(scanner);
                 System.out.print("Digite a mensagem: ");
                 String corpo = scanner.nextLine();
 
                 String data = new SimpleDateFormat("dd/MM/yyyy - HH:mm").format(new Date());
-                String mensagem = String.format("[%s] %s (%s - %s): %s",
-                        data, cuidador, capitalize(tipo), cachorro.equals("*") ? "Todos" : capitalize(cachorro), corpo);
+                String mensagem = String.format("[%s] %s - %s: %s",
+                        data, cuidador, capitalize(tipo), corpo);
 
-                String routingKey = cachorro.equals("*") ? tipo + ".*" : tipo + "." + cachorro;
+                String routingKey = tipo;
 
                 channel.basicPublish(EXCHANGE_NAME, routingKey, null, mensagem.getBytes("UTF-8"));
                 System.out.println("Mensagem enviada com sucesso!\n");
