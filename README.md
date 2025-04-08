@@ -1,4 +1,4 @@
-# PetJoy Hotelzinho 🐶🐱  
+# Hotelzinho PetJoy 🐶🐱  
 Um sistema de comunicação em tempo real entre cuidadores, responsáveis técnicos e um backend de auditoria, usando tópicos no RabbitMQ.
 
 ## 📚 Descrição do Projeto  
@@ -6,14 +6,14 @@ O sistema simula a comunicação interna de um hotel para pets. Os cuidadores po
 
 Todos os eventos são também registrados por um backend de auditoria.
 
-## 🚀 Tecnologias Utilizadas  
+## Tecnologias Utilizadas  
 - RabbitMQ (via CloudAMQP)  
 - Java (Produtor)  
 - Python (Consumidores, Auditoria e Menu)  
 - Topic Exchange  
 - CLI interativa  
 
-## 🧩 Estrutura do Projeto  
+## Estrutura do Projeto  
 - Produtor (Java): envia mensagens por categoria (routing key).  
 - Consumidores (Python): recebem mensagens de uma ou mais categorias.  
 - Auditoria (Python): recebe todas as mensagens, independente da categoria.  
@@ -31,7 +31,7 @@ Todos os eventos são também registrados por um backend de auditoria.
 
 O consumidor pode escolher escutar por categoria específica ou por todas (routing key “#”).
 
-## 🛠 Como Executar o Projeto
+## Como Executar o Projeto
 
 ### 1. Pré-requisitos  
 - Java instalado (JDK 11 ou superior)  
@@ -68,7 +68,7 @@ Você verá as seguintes opções:
 
 Escolha a opção desejada para iniciar o respectivo módulo.
 
-## 🧠 Equipe  
+## Equipe  
 - Ian Nunes – ibn@cesar.school  
-- Leticia Lopes – 
-- Maria Augusta - 
+- Leticia Lopes – llm3@cesar.school  
+- Maria Augusta - mabg@cesar.school  
