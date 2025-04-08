@@ -1,7 +1,7 @@
-# Hotelzinho PetJoy 🐶🐱  
+# 🐶 Hotelzinho PetJoy 🐱  
 Um sistema de comunicação em tempo real entre cuidadores, responsáveis técnicos e um backend de auditoria, usando tópicos no RabbitMQ.
 
-## 📚 Descrição do Projeto  
+## Descrição do Projeto  
 O sistema simula a comunicação interna de um hotel para pets. Os cuidadores podem enviar mensagens relacionadas a diversas categorias (alimentação, saúde, limpeza, diversão, feedback), que são então roteadas de forma inteligente para os consumidores interessados — sejam responsáveis pelos pets ou sistemas de monitoramento.
 
 Todos os eventos são também registrados por um backend de auditoria.
