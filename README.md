@@ -34,11 +34,16 @@ O consumidor pode escolher escutar por categoria específica ou por todas (routi
 ## Como Executar o Projeto
 
 ### 1. Pré-requisitos  
-- Java instalado (JDK 11 ou superior)  
+- Java instalado (JDK 11 ou superior)
+- Maven instalado
 - Python 3 instalado  
-- Biblioteca Pika (instale via pip):  
+- Biblioteca Pika (instale via pip dependendo da sua versão Python):  
   ```bash
   pip install pika
+  ```
+  ou
+  ```bash
+  pip3 install pika
   ```
 
 ### 2. Compilando o Produtor (Java)  
@@ -50,10 +55,14 @@ mvn clean compile assembly:single
 ```
 
 ### 3. Executando o Sistema via Menu Principal  
-Use o script menu.py para iniciar o projeto e escolher qual parte deseja executar:
+Use o script menu.py para iniciar o projeto e escolher qual parte deseja executar dependendo da sua versão Python:
 
 ```bash
 python Menu_PetJoy.py
+```
+ou
+```bash
+python3 Menu_PetJoy.py
 ```
 
 Você verá as seguintes opções:
